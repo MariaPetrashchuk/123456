@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="Grade_form_test.js"></script>
+</head>
+<body>
+
+    <h1>Welcome!</h1>
+    <h2>Please fill out the form below:</h2>
+
+    <form action="/grade">
+        <label for="grade_id">Grade ID:</label>
+        <input type="number" id="grade_id" name="grade_id" required>
+        
+        <label for="student_id">Student ID:</label>
+        <input type="number" id="student_id" name="student_id" required>
+        
+        <label for="discipline_id">Discipline ID:</label>
+        <input type="number" id="discipline_id" name="discipline_id" required>
+        
+        <label for="grade_value">Grade Value:</label>
+        <input type="number" id="grade_value" name="grade_value" required>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="responseMessage"></p>
+
+    <script>
+        document.getElementById("gradeForm").addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            let formData = {
+                grade_id: document.getElementById("grade_id").value,
+                student_id: document.getElementById("student_id").value,
+                discipline_id: document.getElementById("discipline_id").value,
+                grade_value: document.getElementById("grade_value").value
+            };
+
+            fetch("/grade", {
+                method: "PUT",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("responseMessage").textContent = "Response: " + JSON.stringify(data);
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                document.getElementById("responseMessage").textContent = "Error sending data!";
+            });
+        });
+    </script>
+
+</body>
+</html>
