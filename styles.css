@@ -1,0 +1,118 @@
+/* Основні стилі */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовки */
+h1, h2 {
+    text-align: center;
+    color: #5d4037;
+}
+
+h1 {
+    font-size: 3em;
+    margin-top: 20px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 40px;
+}
+
+/* Форма */
+form {
+    width: 80%;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+    color: #5d4037;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 1em;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #8d6e63;
+    color: white;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #5d4037;
+}
+
+/* Список посилань */
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+ul li {
+    text-align: center;
+    margin: 10px 0;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #8d6e63;
+    font-size: 1.2em;
+}
+
+ul li a:hover {
+    color: #5d4037;
+}
+
+/* Адаптивність для мобільних пристроїв */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    h2 {
+        font-size: 1.8em;
+    }
+
+    form {
+        width: 90%;
+        padding: 10px;
+    }
+
+    form input, form textarea {
+        font-size: 1em;
+    }
+
+    form button {
+        font-size: 1em;
+        padding: 8px 15px;
+    }
+
+    ul li a {
+        font-size: 1em;
+    }
+}
