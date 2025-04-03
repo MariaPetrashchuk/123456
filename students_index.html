@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Список студентів</title>
+    <link rel="stylesheet" href="index_styles.css">
+
+    <!--<link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"--->
+</head>
+<body>
+    <h1>Список студентів</h1>
+
+    
+    <table border="1">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ім'я</th>
+                <th>Прізвище</th>
+                <th>Курс</th>
+                <th>Дії</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in students %}
+            <tr>
+                <td> student.Student_ID </td>
+                <td> student.First_Name </td>
+                <td> student.Last_Name </td>
+                <td> student.Course </td>
+                <td>
+                    <a href="{{ url_for('students_show', id=student.Student_ID) }}">Переглянути</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <br>
+    <a href="{{ url_for('students') }}">Перейти до менеджменту студентів</a>
+    <br>
+    <a href="{{ url_for('disciplines_index') }}">Перейти до списку дисциплін</a>
+    <br>
+    <a href="{{ url_for('grades_index') }}">Перейти до списку оцінок</a>
+</body>
+</html>

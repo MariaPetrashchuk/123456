@@ -1,0 +1,99 @@
+/* Основні стилі */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f7;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Заголовок */
+h1 {
+    text-align: center;
+    color: #5d4037;
+    font-size: 3em;
+    margin-top: 20px;
+}
+
+/* Таблиця */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+thead {
+    background-color: #8d6e63;
+    color: white;
+}
+
+thead th {
+    padding: 15px;
+    font-size: 1.2em;
+}
+
+tbody td {
+    padding: 12px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    color: #5d4037;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+/* Посилання */
+a {
+    text-decoration: none;
+    color: #8d6e63;
+    font-size: 1.2em;
+    display: inline-block;
+    margin-top: 10px;
+    text-align: center;
+}
+
+a:hover {
+    color: #5d4037;
+}
+
+/* Кнопки дій */
+td a {
+    padding: 5px 10px;
+    border-radius: 4px;
+    background-color: #8d6e63;
+    color: white;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+td a:hover {
+    background-color: #5d4037;
+}
+
+/* Адаптивність */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    table {
+        width: 95%;
+    }
+
+    thead th {
+        font-size: 1em;
+    }
+
+    tbody td {
+        font-size: 0.9em;
+    }
+
+    a {
+        font-size: 1em;
+    }
+}
